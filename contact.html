@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chips {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            animation: rise 1.2s 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .chip {
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 35px;
+            text-align: left;
+            animation: rise 1.2s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form input::placeholder,
+        .form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .form input:focus,
+        .form textarea:focus {
+            border-color: rgba(0, 217, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.15), 0 0 25px rgba(0, 217, 255, 0.15);
+        }
+
+        .form textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form button {
+            padding: 15px;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            cursor: pointer;
+            background: linear-gradient(90deg, #00d9ff, #a855f7, #ff6ec7);
+            background-size: 200% 100%;
+            transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .form button:hover {
+            background-position: 100% 0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
+        }
+
+        .success {
+            margin-top: 14px;
+            color: #7dffd0;
+            font-size: 0.95rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .success.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="nav">
+        <a href="hello-world.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="card text-page">
+        <span class="badge">✦ Contact ✦</span>
+        <h1>Get in Touch</h1>
+        <p class="subtitle">Questions, ideas, or just a hello — the inbox is open.</p>
+        <div class="divider"></div>
+
+        <div class="chips">
+            <span class="chip">📧 hello@example.com</span>
+            <span class="chip">📍 Dubai, UAE</span>
+        </div>
+
+        <form class="form" id="contact-form">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message…" required></textarea>
+            <button type="submit">Send Message ✨</button>
+        </form>
+        <p class="success" id="success">✨ Message sent — thank you!</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const success = document.getElementById('success');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            form.reset();
+            success.classList.add('visible');
+            setTimeout(() => success.classList.remove('visible'), 4000);
+        });
+    </script>
+</body>
+</html>

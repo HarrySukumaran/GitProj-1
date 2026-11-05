@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-text {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        .about-text + .about-text {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="nav">
+        <a href="hello-world.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="card text-page">
+        <span class="badge">✦ About Us ✦</span>
+        <h1>About This Site</h1>
+        <p class="subtitle">A tiny corner of the web, built for the love of learning.</p>
+        <div class="divider"></div>
+
+        <p class="about-text">
+            This little site started as a single "Hello, World!" page — the classic
+            first step for anyone learning the web. From there it grew: a shared
+            stylesheet, a navigation bar, and pages that actually talk to each other.
+        </p>
+        <p class="about-text">
+            Everything here is hand-crafted with plain HTML and CSS. No frameworks,
+            no build steps — just markup, styles, and a few well-placed animations.
+            Open the source in your editor and poke around; that's the best way to learn.
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🧱</div>
+                <h3>Pure HTML &amp; CSS</h3>
+                <p>Hand-written code — no frameworks, no build tools needed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🪟</div>
+                <h3>Glassmorphism</h3>
+                <p>Frosted panels, drifting orbs and soft glowing shadows.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Animations</h3>
+                <p>Shimmering text and smooth entrances, all in the browser.</p>
+            </div>
+        </div>
+
+        <a class="btn" href="contact.html">Get in touch →</a>
+    </div>
+</body>
+</html>
