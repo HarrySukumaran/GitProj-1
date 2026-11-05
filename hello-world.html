@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World! ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a1a;
+            overflow: hidden;
+        }
+
+        /* Animated gradient orbs in the background */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.5;
+            animation: drift 12s ease-in-out infinite alternate;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #7b2ff7, transparent);
+            top: -150px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #00c6ff, transparent);
+            bottom: -120px;
+            right: -100px;
+            animation-delay: -4s;
+            animation-duration: 15s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, #f73186, transparent);
+            bottom: 30%;
+            left: 55%;
+            animation-delay: -8s;
+            animation-duration: 18s;
+        }
+
+        @keyframes drift {
+            0%   { transform: translate(0, 0) scale(1); }
+            50%  { transform: translate(60px, -40px) scale(1.15); }
+            100% { transform: translate(-40px, 50px) scale(0.95); }
+        }
+
+        /* Subtle grid overlay */
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+        }
+
+        /* Glass card */
+        .card {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 70px 90px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            animation: rise 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(40px) scale(0.96); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #c8c8ff;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: rise 1.2s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 9vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #00d9ff, #a855f7, #ff6ec7, #00d9ff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 6s linear infinite, rise 1.2s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+            filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.35));
+        }
+
+        @keyframes shimmer {
+            to { background-position: 300% 0; }
+        }
+
+        .subtitle {
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.15rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: rise 1.2s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            margin: 30px auto 0;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #00d9ff, #a855f7);
+            animation: rise 1.2s 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="card">
+        <span class="badge">✦ Welcome ✦</span>
+        <h1>Hello, World!</h1>
+        <p class="subtitle">Your first step into something beautiful.</p>
+        <div class="divider"></div>
+    </div>
+</body>
+</html>
